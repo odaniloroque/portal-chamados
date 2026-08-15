@@ -1,0 +1,1 @@
+REVOKE ALL ON FUNCTION public.ticket_has_subtickets(uuid) FROM PUBLIC, anon, authenticated;

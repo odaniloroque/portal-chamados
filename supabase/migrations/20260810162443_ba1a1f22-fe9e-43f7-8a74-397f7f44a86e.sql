@@ -1,0 +1,1 @@
+REVOKE ALL ON FUNCTION public.auto_client_response_status() FROM PUBLIC, anon, authenticated;

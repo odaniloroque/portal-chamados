@@ -1,0 +1,1 @@
+ALTER TYPE public.ticket_status ADD VALUE IF NOT EXISTS 'em_desenvolvimento' AFTER 'respondido_cliente';

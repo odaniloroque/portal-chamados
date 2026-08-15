@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "sdk_version": "0.24.0",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "projetus-tech-mcp",
+      "version": "0.1.0",
+      "title": "Projetus Tech MCP"
+    },
+    "tools": [
+      {
+        "name": "get_company_info",
+        "title": "Obter informações da empresa",
+        "description": "Retorna informações institucionais da Projetus Tech: descrição, localização e telefone de contato.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_services",
+        "title": "Listar serviços",
+        "description": "Lista os serviços oferecidos pela Projetus Tech (infraestrutura, cloud, segurança, redes, suporte).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}

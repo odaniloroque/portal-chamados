@@ -1,0 +1,1 @@
+GRANT EXECUTE ON FUNCTION public.ticket_has_subtickets(uuid) TO authenticated;

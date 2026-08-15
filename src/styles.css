@@ -1,0 +1,129 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-brand-graphite: var(--brand-graphite);
+  --color-brand-silver: var(--brand-silver);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand palette (Projetus Tech) */
+  --brand-navy: oklch(0.36 0.12 255);      /* #0B3C74 */
+  --brand-cyan: oklch(0.72 0.18 230);      /* #00C4F3 */
+  --brand-graphite: oklch(0.28 0 0);       /* #2B2B2B */
+  --brand-silver: oklch(0.80 0.005 250);   /* #B7BBC2 */
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.20 0.02 255);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.20 0.02 255);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.20 0.02 255);
+  --primary: var(--brand-navy);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.96 0.01 250);
+  --secondary-foreground: var(--brand-navy);
+  --muted: oklch(0.96 0.01 250);
+  --muted-foreground: oklch(0.45 0.02 255);
+  --accent: var(--brand-cyan);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.92 0.01 250);
+  --input: oklch(0.92 0.01 250);
+  --ring: var(--brand-cyan);
+
+  /* Chart palette (dashboard de chamados) */
+  --chart-blue: oklch(0.58 0.17 255);
+  --chart-green: oklch(0.65 0.16 155);
+  --chart-orange: oklch(0.72 0.16 60);
+  --chart-purple: oklch(0.58 0.18 300);
+  --chart-red: oklch(0.60 0.21 25);
+  --chart-gray: oklch(0.75 0.01 250);
+
+
+  --gradient-hero: linear-gradient(135deg, oklch(0.28 0.10 255) 0%, var(--brand-navy) 45%, oklch(0.45 0.14 240) 100%);
+  --gradient-accent: linear-gradient(90deg, var(--brand-navy), var(--brand-cyan));
+  --shadow-elevated: 0 24px 60px -20px color-mix(in oklab, var(--brand-navy) 40%, transparent);
+  --shadow-card: 0 8px 30px -12px color-mix(in oklab, var(--brand-navy) 18%, transparent);
+
+  /* Hex pattern (SVG data uri) */
+  --hex-pattern: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='52' viewBox='0 0 60 52'><path d='M15 1l14 8v16l-14 8L1 25V9zM45 1l14 8v16l-14 8-14-8V9z' fill='none' stroke='%2300C4F3' stroke-opacity='0.12' stroke-width='1'/></svg>");
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility bg-hex-pattern {
+  background-image: var(--hex-pattern);
+}
+
+@utility bg-gradient-hero {
+  background-image: var(--gradient-hero);
+}
+
+@utility bg-gradient-accent {
+  background-image: var(--gradient-accent);
+}
+
+@utility text-gradient-accent {
+  background-image: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility shadow-elevated {
+  box-shadow: var(--shadow-elevated);
+}
+
+@utility shadow-card-brand {
+  box-shadow: var(--shadow-card);
+}
